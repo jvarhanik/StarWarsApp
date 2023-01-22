@@ -1,0 +1,7 @@
+{
+  "name": "StarWarsApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
