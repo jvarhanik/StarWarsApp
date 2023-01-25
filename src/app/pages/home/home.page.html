@@ -1,0 +1,51 @@
+<ion-menu contentId="main-content" type="overlay">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Star Wars App</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-list>
+      <ion-item button [routerLink]="['/home']"><ion-label>Homepage</ion-label></ion-item>
+      <ion-item button [routerLink]="['/movies']"><ion-label>Films</ion-label></ion-item>
+      <ion-item button [routerLink]="['/characters']"><ion-label>Characters</ion-label></ion-item>
+      <ion-item button><ion-label [routerLink]="['/last-viewed']">Last Viewed</ion-label></ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="2">
+          <ion-img src="./assets/logo.png" class="logo ion-text-left" (click)="homePage()"></ion-img>
+        </ion-col>
+        <ion-col size="10">
+          <div class="navbar" class="ion-text-center">
+            <ion-button fill="warning" (click)="goFilms()">Films</ion-button>
+            <ion-button fill="warning" (click)="goPeople()">Characters</ion-button>
+            <ion-button fill="warning"><ion-menu-toggle><ion-icon name="ellipsis-vertical-outline"></ion-icon></ion-menu-toggle></ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">Star Wars App</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <div id="container">
+      <strong>Welcome to StarWars App</strong>
+      <p>Browse your favourite Star Wars films of characters right away</p>
+      <ion-button fill="warning" (click)="goFilms()">Films</ion-button>
+      <ion-button fill="warning" (click)="goPeople()">Characters</ion-button>
+    </div>
+  </ion-content>
+
+</div>
