@@ -1,0 +1,54 @@
+<ion-menu contentId="movies-content" type="overlay">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Star Wars App</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-list>
+      <ion-item button [routerLink]="['/home']"><ion-label>Homepage</ion-label></ion-item>
+      <ion-item button [routerLink]="['/movies']"><ion-label>Films</ion-label></ion-item>
+      <ion-item button disabled="true"><ion-label>Characters</ion-label></ion-item>
+      <ion-item button><ion-label [routerLink]="['/last-viewed']">Last Viewed</ion-label></ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="movies-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="2">
+          <ion-img src="./assets/logo.png" class="logo ion-text-left" (click)="homePage()"></ion-img>
+        </ion-col>
+        <ion-col size="10">
+          <div class="navbar" class="ion-text-center">
+            <ion-button fill="warning" (click)="goFilms()">Films</ion-button>
+            <ion-button fill="warning" disabled="true">Characters</ion-button>
+            <ion-button fill="warning"><ion-menu-button><ion-icon name="ellipsis-vertical-outline"></ion-icon></ion-menu-button></ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-searchbar class="ion-text-center" show-clear-button="focus" animated="true" placeholder="Search" [debounce]="1000" (ionChange)="handleChange($event)"></ion-searchbar>
+    <ion-list>
+      <ion-item button *ngFor="let i of this.characters" (click)="redirectToDetails(i.id)">
+        <ion-label>
+          {{i.name}}
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+  <ion-footer>
+    <ion-toolbar>
+      <div class="ion-text-center">
+        <ion-button fill="warning" (click)="prevPage()"><ion-icon name="arrow-back-outline"></ion-icon></ion-button>
+        <ion-button fill="warning" (click)="nextPage()" ><ion-icon name="arrow-forward-outline"></ion-icon></ion-button>
+      </div>
+    </ion-toolbar>
+  </ion-footer>
+</div>

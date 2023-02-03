@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{character[0]?.name}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/characters/page/1"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="container" class="ion-text-center">
+    <strong>{{character[0]?.name}}</strong>
+    <ion-card>
+      <p>Birth year: {{character[0]?.birth_year}}</p>
+      <p>Mass: {{character[0]?.mass}}</p>
+      <p>Height: {{character[0]?.height}}</p>
+      <p>Gender: {{character[0]?.gender}}</p>
+      <p>Eye colour: {{character[0]?.eye_color}}</p>
+      <p>Skin colour: {{character[0]?.skin_color}}</p>
+    </ion-card>
+  </div>
+</ion-content>

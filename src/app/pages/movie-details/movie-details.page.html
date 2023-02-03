@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{movie[0]?.title}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/movies"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div id="container" class="ion-text-center">
+    <strong>{{movie[0]?.title}}</strong>
+    <ion-card>
+      <p>{{movie[0]?.director}} ({{movie[0]?.release_date | date: 'y'}})</p>
+      <p>Producers: {{movie[0]?.producer}}</p>
+      <p></p>
+    </ion-card>
+
+  </div>
+
+</ion-content>

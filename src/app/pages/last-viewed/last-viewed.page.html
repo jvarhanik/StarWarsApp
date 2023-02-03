@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Last Views</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <strong>Films:</strong>
+  <ion-list>
+    <div *ngFor="let i of this.allData">
+      <ion-item button *ngIf="i[0].url.includes('film')" [routerLink]="['../movies/' + i[0].id]">
+        <ion-label>{{i[0].title}}</ion-label>
+      </ion-item>
+    </div>
+  </ion-list>
+  <strong>Characters:</strong>
+  <ion-list>
+    <div *ngFor="let i of this.allData">
+      <ion-item button *ngIf="i[0].url.includes('people')" [routerLink]="['../characters/' + i[0].id]">
+        <ion-label>{{i[0].name}}</ion-label>
+      </ion-item>
+    </div>
+  </ion-list>
+
+</ion-content>
